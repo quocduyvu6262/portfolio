@@ -87,7 +87,7 @@ const Experience = (props) => {
                                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Software Engineer Intern</h3>
                                     <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-white-700">San Diego Supercomputer Center</time>
                                     <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-white-700">Jun 2022 - Sep 2022</time>
-                                    <ul className="list-disc pl-5 text-base font-normal text-gray-500 dark:text-white">
+                                    <ul className="list-disc pl-5 text-base font-exo text-gray-500 dark:text-white">
                                         <li>
                                             Collaborated with a team of 8 to develop a roommate-finder app in React Native for UCSD students.
                                         </li>
@@ -119,7 +119,7 @@ const Experience = (props) => {
                                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Software Engineer</h3>
                                     <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-white-700">San Diego Supercomputer Center</time>
                                     <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-white-700">Aug 2023 - Feb 2024</time>
-                                    <ul className="list-disc pl-5 text-base font-normal text-gray-500 dark:text-white">
+                                    <ul className="list-disc pl-5 text-base font-exo text-gray-500 dark:text-white">
                                         <li>
                                             Contributed to NeuroRes development, an iOS chat-based mobile app for 200+ neuroscience residents and attending physicians.
                                         </li>

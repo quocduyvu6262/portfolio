@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         generalsans: ['General Sans', 'sans-serif'],
+        exo: ['"Exo 2"', "sans-serif"],
       },
       colors: {
         black: {
