@@ -9,8 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "vite preview",
-    "heroku-postbuild": "npm run build"
+    "start": "vite preview"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
