@@ -4,13 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "vite": "vite",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "start": "vite preview",
-    "heroku-postbuild": "npm install --only=dev && npm run build"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
