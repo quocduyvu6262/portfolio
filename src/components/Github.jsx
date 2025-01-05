@@ -50,6 +50,10 @@ export function Github(props) {
             dispose={null}
             onPointerEnter={handleMouseEnter}
             onPointerLeave={handleMouseLeave}
+            onClick={(event) => {
+                event.stopPropagation();
+                window.open('https://github.com/quocduyvu6262', '_blank');
+            }}
         >
             <group name="Scene">
                 <mesh

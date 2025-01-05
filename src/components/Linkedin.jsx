@@ -53,6 +53,10 @@ export function Linkedin(props) {
             dispose={null}
             onPointerEnter={handleMouseEnter}
             onPointerLeave={handleMouseLeave}
+            onClick={(event) => {
+                event.stopPropagation();
+                window.open('https://www.linkedin.com/in/duyquocvu/', '_blank');
+            }}
         >
             <mesh
                 castShadow
