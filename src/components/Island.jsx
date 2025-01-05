@@ -58,6 +58,12 @@ function Island({setShowTitle, ...props}) {
         sheet.sequence.position = scroll.offset * sequenceLength;
         setShowTitle(scroll.offset < 0.15);
         setShow(scroll.offset > 0.57 && scroll.offset < 0.8)
+        const keys = ["workRef", "grcRef", "dentalRef", "trafficRef"]
+        keys.forEach(key => {
+            if (scroll.offset <= 0.57 || scroll.offset >= 0.8) {
+                sectionSetters[key](false)
+            }
+        })
     });
 
     const handleMouseEnter = (key) => {
