@@ -10,7 +10,7 @@ import SectionTitle from "./SectionTitle.jsx";
 import Experience from "../sections/Experience.jsx";
 import Project from "../sections/Project.jsx";
 
-function Island({setShowTitle, ...props}) {
+function Island({setShowTitle, scrollRef, ...props}) {
     const { scene, nodes, materials, animations } = useGLTF('/models/island/scene.gltf')
     const sheet = useCurrentSheet();
     const scroll = useScroll();
@@ -65,6 +65,10 @@ function Island({setShowTitle, ...props}) {
             }
         })
     });
+
+    useEffect(() => {
+        scrollRef.current = scroll
+    }, [scroll, scrollRef]);
 
     const handleMouseEnter = (key) => {
         document.body.style.cursor = "pointer";

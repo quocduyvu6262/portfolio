@@ -75,11 +75,12 @@ const Hero = () => {
                                     position={[-5,4,0]}
                                     rotation={[0.2,-4,0]}
                                 />
-                                <About scrollRef={scrollRef}/>
+                                <About/>
                                 <Island
                                     scale={0.007}
                                     setShowTitle={setShowTitle}
                                     pointerEvents="auto"
+                                    scrollRef={scrollRef}
                                 />
                                 <group position={[-1.5,0,1]}>
                                     <Github

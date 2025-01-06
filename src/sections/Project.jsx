@@ -75,10 +75,10 @@ const Project = (props) => {
                             width: "350px",
                             pointerEvents: 'auto',
                         }}>
-                            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{props.project.title}</h3>
-                            <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-white-700">{props.project.date}</time>
-                            <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-white-700">{props.project.link}</time>
-                            <ul className="list-disc pl-5 text-base font-exo text-gray-500 dark:text-white">
+                            <h3 className="text-lg font-semibold text-white">{props.project.title}</h3>
+                            <time className="block mb-2 text-sm font-normal leading-none text-white-700">{props.project.date}</time>
+                            <time className="block mb-2 text-sm font-normal leading-none text-white-700">{props.project.link}</time>
+                            <ul className="list-disc pl-5 text-base font-exo text-white">
                                 {props.project.content.map( (content, index) =>
                                     <li key={index}>{content}</li>
                                 )}

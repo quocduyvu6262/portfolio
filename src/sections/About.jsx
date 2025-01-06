@@ -6,9 +6,6 @@ const About = ({scrollRef}) => {
     const { gl } = useThree();
     const scroll = useScroll();
     const [opacity, setOpacity] = useState(false);
-    useEffect(() => {
-        scrollRef.current = scroll
-    }, [scroll, scrollRef]);
     useFrame(() => {
         setOpacity(scroll.offset > 0.15 && scroll.offset < 0.5)
     })
