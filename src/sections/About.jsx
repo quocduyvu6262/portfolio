@@ -12,21 +12,21 @@ const About = ({scrollRef}) => {
     return (
         <Html
             portal={{ current: gl.domElement.parentNode }}
-            position={[-30,16,-30]}
+            position={[-30,20,-30]}
             style={{
                 pointerEvents: 'none',
             }}
         >
-            <section className={`w-full transition-opacity duration-300 ${opacity ? 'opacity-100' : 'opacity-0'}`}
+            <section className={`transition-opacity duration-300 ${opacity ? 'opacity-100' : 'opacity-0'}`}
                      style={{
-                         width: '240%',
+                         width: '300%',
                      }}
             >
                 <p className={`hero_tag text-gray-800`}>
                     About Me
                 </p>
                 <p className={`sm:text-3xl text-2xl font-large text-black font-exo leading-relaxed tracking-wide`}>
-                    I am currently pursuing a master in Computer Science at Texas A&M University, where I mostly focus on distributed system and fullstack development.
+                    I am currently pursuing a Master's in Computer Science at Texas A&M University, focusing on cloud computing and distributed systems. Previously, I received a Bachelor's degree in Mathematics from UC San Diego. Feel free to explore my projects, and connect!
                 </p>
             </section>
         </Html>
