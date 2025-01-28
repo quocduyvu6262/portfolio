@@ -35,6 +35,7 @@ const SectionTitle = (props) => {
 
     return (
         <Html
+            zIndexRange={[2, 0]}
             ref={viewRef}
             transform
             occlude={props.occlude}

@@ -185,31 +185,6 @@ function Island({setShowTitle, scrollRef, ...props}) {
                             geometry={nodes.Object_4.geometry}
                             material={materials.BALOON_CURVE}
                         />
-                        <Html
-                            transform
-                            scale={1 * (1/props.scale)}
-                            position={[80, 0, 1150]}
-                            rotation={[-Math.PI / 2 + 2.99, 0, 0]}
-                            portal={{ current: gl.domElement.parentNode }}
-                        >
-                            <section
-                                onMouseEnter={() => handleMouseEnter("balloonRef")}
-                                onMouseLeave={() => handleMouseLeave("balloonRef")}
-                                style={{ userSelect: 'none' }}
-                                onClick={() => {
-                                    scroll.el.scrollTo({
-                                        top: window.innerHeight * 2, // Change this value to the desired scroll offset
-                                        behavior: 'smooth',
-                                    });
-                                }}
-                            >
-                                <h2
-                                    className={`px-2 border border-white rounded-lg text-center bg-yellow-300 w-full text-3xl font-bold text-black font-generalsans leading-relaxed tracking-wide`}
-                                >
-                                    Experience & Projects
-                                </h2>
-                            </section>
-                        </Html>
                     </group>
                     <group ref={islandRef}>
                         <mesh
