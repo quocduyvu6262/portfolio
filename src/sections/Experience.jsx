@@ -61,6 +61,7 @@ const Experience = (props) => {
     return (
         <>
             <Html
+                zIndexRange={[2, 0]}
                 ref={expRef}
                 transform
                 portal={{ current: gl.domElement.parentNode }}

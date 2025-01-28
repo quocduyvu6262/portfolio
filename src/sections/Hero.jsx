@@ -13,9 +13,8 @@ import {Linkedin} from "../components/Linkedin.jsx";
 const sheet = getProject("Fly Through", {state: state}).sheet("Scene")
 import { motion } from 'framer-motion';
 
-const Hero = () => {
+const Hero = ({scrollRef}) => {
     const [showTitle, setShowTitle] = useState(true);
-    const scrollRef = useRef();
 
     const handleScroll = () => {
         if (scrollRef.current) {
@@ -40,7 +39,7 @@ const Hero = () => {
                     Building Things for Fun
                 </p>
             </div>
-            <div className="absolute items-center flex justify-center z-10 bottom-10 w-full" style={{ pointerEvents: 'none' }}>
+            <div className="absolute items-center flex justify-center z-10 bottom-5 w-full" style={{ pointerEvents: 'none' }}>
                 <button
                     onClick={handleScroll}
                     style={{
@@ -75,24 +74,12 @@ const Hero = () => {
                                     position={[-5,4,0]}
                                     rotation={[0.2,-4,0]}
                                 />
-                                <About/>
                                 <Island
                                     scale={0.007}
                                     setShowTitle={setShowTitle}
                                     pointerEvents="auto"
                                     scrollRef={scrollRef}
                                 />
-                                <group position={[-1.5,0,1]}>
-                                    <Github
-                                        rotation={[0,0.1,0]}
-                                        position={[18,2,-0.4]}
-                                    />
-                                    <Linkedin
-                                        rotation={[-0.2,-0.09,0]}
-                                        position={[15,2,0]}
-                                        scale={3}
-                                    />
-                                </group>
                                 <ambientLight intensity={1}/>
                                 <directionalLight position={[8, 4, 7]} intensity={6}/>
                             </SheetProvider>
