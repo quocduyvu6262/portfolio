@@ -1,36 +1,65 @@
-import React, {useEffect, useRef, useState} from 'react'
-import {Html, Scroll, useScroll} from "@react-three/drei";
-import {useFrame, useThree} from "@react-three/fiber";
+import React, {useEffect, useState} from 'react'
+import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { IoMdClose } from "react-icons/io";
+import { motion, AnimatePresence } from "motion/react"
 
-const About = ({scrollRef}) => {
-    const { gl } = useThree();
-    const scroll = useScroll();
-    const [opacity, setOpacity] = useState(false);
-    useFrame(() => {
-        setOpacity(scroll.offset > 0.15 && scroll.offset < 0.5)
-    })
+const About = ({scrollRef, showAbout, setShowAbout}) => {
+
     return (
-        <Html
-            portal={{ current: gl.domElement.parentNode }}
-            position={[-30,20,-30]}
-            style={{
-                pointerEvents: 'none',
-            }}
-        >
-            <section className={`transition-opacity duration-300 ${opacity ? 'opacity-100' : 'opacity-0'}`}
-                     style={{
-                         width: '300%',
-                     }}
-            >
-                <p className={`hero_tag text-gray-800`}>
-                    About Me
-                </p>
-                <p className={`sm:text-3xl text-2xl font-large text-black font-exo leading-relaxed tracking-wide`}>
-                    I am currently pursuing a Master's in Computer Science at Texas A&M University, focusing on cloud computing and distributed systems. Previously, I received a Bachelor's degree in Mathematics from UC San Diego. Feel free to explore my projects, and connect!
-                </p>
-            </section>
-        </Html>
+        <AnimatePresence initial={false}>
+            {showAbout &&
+                <motion.div
+                    key="about"
+                    className={`absolute top-1/2 translate -translate-x-1/2 -translate-y-1/2 bg-[rgba(10,25,47,0.85)] left-1/2 flex items-start justify-center md:w-1/2 2xl:w-1/4 md:h-[70%] 2xl:h-[40%] z-10 rounded-[18px]`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                >
+                    <div className="flex md:flex-row md:gap-0 gap-0 xl:items-start flex-col w-full md:h-full md:pt-14 p-5">
+
+                        <div className="xl:flex flex-1 justify-center hidden">Avatar</div>
+
+                        <div className="flex flex-col md:p-0 p-5 gap-5 xl:w-1/2 xl:md:mr-[10%] overflow-auto h-full w-full">
+                            <p className="text-3xl text-white font-bold">Tony Vu</p>
+                            <div className="flex flex-row gap-2">
+                                <a href="https://github.com/quocduyvu6262" target="_blank" className="flex flex-row gap-2 border-2 items-center p-1 rounded-md">
+                                    <FaGithubSquare color="white" size={20} />
+                                    <p className="text-md text-white font-sans font-semibold">Github</p>
+                                </a>
+                                <a href="https://www.linkedin.com/in/duyquocvu/" target="_blank" className="flex flex-row gap-2 border-2 items-center p-1 rounded-md">
+                                    <FaLinkedin color="white" size={20} />
+                                    <p className="text-md text-white font-sans font-semibold">Linkedin</p>
+                                </a>
+                                <a href="mailto:quocduyvu6262@gmail.com" target="_blank" className="flex flex-row gap-2 border-2 items-center p-1 rounded-md">
+                                    <MdEmail color="white" size={20} />
+                                    <p className="text-md text-white font-sans font-semibold">Email</p>
+                                </a>
+                            </div>
+                            <p className="font-sans text-white">I am currently pursue a master in Computer Science at Texas A&M University, where I focus on cloud and distributed system. Before that, I have around 1 year experience in fullstack and iOS development.</p>
+                            <div className="gap-3 flex flex-col">
+                                <p className="text-2xl text-white font-semibold">Education</p>
+                                <div>
+                                    <p className="text-xl text-white font-semibold">Texas A&M University</p>
+                                    <p className="text-md text-white-700">Master of Science in Computer Science</p>
+                                </div>
+                                <div>
+                                    <p className="text-xl text-white font-semibold">University of California, San Diego</p>
+                                    <p className="text-md text-white-700">Bachelor of Science in Mathematics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="absolute right-3 top-3">
+                        <button onClick={() => setShowAbout(!showAbout)}>
+                            <IoMdClose size={30} />
+                        </button>
+                    </div>
+                </motion.div>
+            }
+        </AnimatePresence>
     )
 }
-
 export default About
