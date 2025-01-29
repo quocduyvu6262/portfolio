@@ -12,8 +12,8 @@ const App = () => {
     const [showExperience, setShowExperience] = useState(false)
     return (
         <main>
-            <NavBar scrollRef={scrollRef} showAbout={showAbout} setShowAbout={setShowAbout} setShowExperience={setShowExperience}/>
             <Hero scrollRef={scrollRef}/>
+            <NavBar scrollRef={scrollRef} showAbout={showAbout} setShowAbout={setShowAbout} setShowExperience={setShowExperience}/>
             <About scrollRef={scrollRef} showAbout={showAbout} setShowAbout={setShowAbout}/>
             <Experience scrollRef={scrollRef} showExperience={showExperience} setShowExperience={setShowExperience}/>
         </main>

@@ -40,16 +40,21 @@ const NavBar = ({scrollRef, showAbout, setShowAbout, setShowExperience}) => {
                 }
             }
         };
-        const scrollElement = scrollRef.current?.el;
-        if (scrollElement && !isScrolling) {
-            scrollElement.addEventListener('scroll', handleScrollPosition);
-        }
+        const interval = setInterval(() => {
+            const scrollElement = scrollRef.current?.el;
+            if (scrollElement && !isScrolling) {
+                scrollElement.addEventListener('scroll', handleScrollPosition);
+                clearInterval(interval)
+            }
+        }, 100)
         return () => {
+            clearInterval(interval)
+            const scrollElement = scrollRef.current?.el;
             if (scrollElement) {
                 scrollElement.removeEventListener('scroll', handleScrollPosition);
             }
         };
-    });
+    }, [scrollRef, setActive, isScrolling]);
 
     useEffect(() => {
         if (isScrolling) {

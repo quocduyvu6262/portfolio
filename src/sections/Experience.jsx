@@ -17,7 +17,7 @@ const Experience = ({scrollRef, showExperience, setShowExperience}) => {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
                 >
-                    <div className="sticky top-3 right-3 flex justify-end w-full px-3">
+                    <div className="sticky top-0 right-0 flex justify-end w-full px-3">
                         <button onClick={() => setShowExperience(false)}>
                             <IoMdClose color="white" size={30} />
                         </button>
