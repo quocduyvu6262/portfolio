@@ -247,24 +247,6 @@ function Island({setShowTitle, scrollRef, ...props}) {
                                 geometry={nodes.Object_13.geometry}
                                 material={materials.machine_MAIN}
                             />
-                            <mesh
-                                castShadow
-                                receiveShadow
-                                scale={1.2 * (1/props.scale)}
-                                rotation={[-Math.PI / 2 + 3, 0, 0]}
-                                position={[40,307, 600]}
-                            >
-                                <SectionTitle
-                                    occlude={false}
-                                    onMouseEnter={() => handleMouseEnter("workRef")}
-                                    onClick={() => {
-                                        handleOnClick("workRef")
-                                        handleMouseLeave("workRef")
-                                    }}
-                                    title="Work Experience"
-                                    show={show}
-                                />
-                            </mesh>
                         </group>
                         <group
                             ref={grcRef}
@@ -284,22 +266,6 @@ function Island({setShowTitle, scrollRef, ...props}) {
                                 geometry={nodes.Object_15.geometry}
                                 material={materials.machine_REACTOR_transparent}
                             />
-                            <mesh
-                                castShadow
-                                receiveShadow
-                                scale={0.98 * (1/props.scale)}
-                                rotation={[-Math.PI / 2 + 3, 0, 0]}
-                                position={[-750,207, 500]}
-                            >
-                                <SectionTitle
-                                    occlude={false}
-                                    onMouseEnter={() => handleMouseEnter("grcRef")}
-                                    onMouseLeave={() => handleMouseLeave("grcRef")}
-                                    onClick={() => handleOnClick("grcRef")}
-                                    title="GRC Controls Automation"
-                                    show={show}
-                                />
-                            </mesh>
                         </group>
                         <mesh
                             castShadow
@@ -344,22 +310,6 @@ function Island({setShowTitle, scrollRef, ...props}) {
                                 geometry={nodes.Object_23.geometry}
                                 material={materials.machine_PRINTER}
                             />
-                            <mesh
-                                castShadow
-                                receiveShadow
-                                scale={0.7 * (1/props.scale)}
-                                rotation={[-Math.PI / 2 + 3, 0, 0]}
-                                position={[-700,-200, 400]}
-                            >
-                                <SectionTitle
-                                    occlude={false}
-                                    onMouseEnter={() => handleMouseEnter("dentalRef")}
-                                    onMouseLeave={() => handleMouseLeave("dentalRef")}
-                                    onClick={() => handleOnClick("dentalRef")}
-                                    title="Dental Booking System"
-                                    show={show}
-                                />
-                            </mesh>
                         </group>
                         <group
                             ref={trafficRef}
@@ -367,22 +317,6 @@ function Island({setShowTitle, scrollRef, ...props}) {
                             onPointerLeave={() => handleMouseLeave("trafficRef")}
                             onClick={() => handleOnClick("trafficRef")}
                         >
-                            <mesh
-                                castShadow
-                                receiveShadow
-                                scale={0.85 * (1/props.scale)}
-                                rotation={[-Math.PI / 2 + 3, -0.07, 0]}
-                                position={[800,0,700]}
-                            >
-                                <SectionTitle
-                                    occlude={false}
-                                    onMouseEnter={() => handleMouseEnter("trafficRef")}
-                                    onMouseLeave={() => handleMouseLeave("trafficRef")}
-                                    onClick={() => handleOnClick("trafficRef")}
-                                    title="Traffic Signal Control"
-                                    show={show}
-                                />
-                            </mesh>
                             <mesh
                                 castShadow
                                 receiveShadow
@@ -412,19 +346,6 @@ function Island({setShowTitle, scrollRef, ...props}) {
                     </group>
                 </group>
             </group>
-            <mesh
-                position={[0.6,2,0.4]}
-                rotation={[-0.2,0,0]}
-            >
-                <Experience show={showExp} setShowExp={setShowExp}/>
-            </mesh>
-
-            <mesh
-                position={[0.6,2,0.4]}
-                rotation={[-0.2,0,0]}
-            >
-                <Project show={showProject} setShowExp={setShowProject} project={project}/>
-            </mesh>
         </>
 
     )

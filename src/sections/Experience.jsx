@@ -1,162 +1,114 @@
-import React, {useEffect, useRef, useState} from 'react'
-import {Html, Scroll, useScroll} from "@react-three/drei";
-import {useFrame, useThree} from "@react-three/fiber";
-import 'react-vertical-timeline-component/style.min.css';
-import { gsap } from "gsap";
-import {useGSAP} from "@gsap/react";
+import React, {useEffect, useState} from 'react'
+import { IoMdClose } from "react-icons/io";
+import { motion, AnimatePresence } from "motion/react"
+import { FiExternalLink } from "react-icons/fi";
 
-const Experience = (props) => {
 
-    const [isOpen, setIsOpen] = useState(true);
-    const { gl } = useThree();
-    const scroll = useScroll();
-    const textRef = useRef();
-    const htmlRef = useRef();
-    const closeRef = useRef();
-    const expRef = useRef();
-    const [shouldRender, setShouldRender] = useState(false);
-
-    useEffect(() => {
-        if (expRef.current) { // Check if the ref is set
-            if (props.show) {
-                setShouldRender(true)
-                gsap.fromTo(
-                    expRef.current,
-                    { autoAlpha: 0, y: -20 }, // Initial state (hidden and shifted up)
-                    { autoAlpha: 1, y: 0, duration: 1, ease: "power3.out" } // Final state (visible and centered)
-                );
-            } else {
-                // Animate the View out
-                gsap.to(expRef.current, {
-                    autoAlpha: 0,
-                    y: -20,
-                    duration: 0.3,
-                });
-            }
-        }
-    }, [props.show]);
-
-    const handleCloseMouseEnter = () => {
-        document.body.style.cursor = "pointer";
-        gsap.to(closeRef.current, {
-            scale: 1.03,
-            duration: 0.3,
-            ease: "power2.out",
-        });
-    };
-
-    const handleCloseMouseLeave = () => {
-        document.body.style.cursor = "default";
-        gsap.to(closeRef.current, {
-            scale: 1,
-            duration: 0.3,
-            ease: "power2.out",
-        });
-    };
-
-    if (expRef.current) {
-        expRef.current.parentElement.style.pointerEvents = 'none'
-    }
+const Experience = ({scrollRef, showExperience, setShowExperience}) => {
 
     return (
-        <>
-            <Html
-                zIndexRange={[2, 0]}
-                ref={expRef}
-                transform
-                portal={{ current: gl.domElement.parentNode }}
-            >
-                {shouldRender &&
-                    <section className="flex">
-                        <ol className="sm:flex" style={{pointerEvents: 'auto'}}>
-                            <li className="relative mb-6 sm:mb-0">
-                                <div className="flex items-center">
-                                    <div className="z-10 flex items-center justify-center w-6 h-6 rounded-full ring-0 bg-blue-900 sm:ring-8 ring-gray-900 shrink-0">
-                                        <svg className="w-2.5 h-2.5 text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                                        </svg>
-                                    </div>
-                                    <div className="hidden sm:flex w-full h-1 bg-white"></div>
+        <AnimatePresence initial={false}>
+            {showExperience &&
+                <motion.div
+                    key="about"
+                    className={`absolute top-1/2 py-10 translate overflow-y-auto -translate-x-1/2 -translate-y-1/2 pt-5 bg-[rgba(10,25,47,0.85)] left-1/2 flex flex-col items-center justify-start w-[90%] sm:w-[60%] 2xl:w-1/3 h-[70%] 2xl:h-[50%] z-10 rounded-[18px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-with-1 scrollbar-track-transparent`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                >
+                    <div className="sticky top-3 right-3 flex justify-end w-full px-3">
+                        <button onClick={() => setShowExperience(false)}>
+                            <IoMdClose size={30} />
+                        </button>
+                    </div>
+                    <div className="flex flex-col gap-5 2xl:gap-0 w-3/4 text-white font-sans">
+                        <div className="flex flex-col gap-2">
+                            <div className="flex flex-row justify-start gap-10">
+                                <div>
+                                    <p className="font-bold text-lg">San Diego Supercomputer Center</p>
+                                    <p className="text-[12px] text-gray-300">August 2023 - February 2024</p>
+                                    <p className="text-[12px] text-gray-300">Software Engineer</p>
                                 </div>
-                                <div className="mt-3 sm:pe-8 border-2 mr-10 p-5" style={{
-                                    background: "linear-gradient(135deg, #2D006A,#2D008A, #00FFFF)",
-                                    opacity: 0.85,
-                                    borderRadius: 12,
-                                    height: "350px",
-                                    width: "350px"
-                                }}>
-                                    <h3 className="text-lg font-semibold text-white">Software Engineer Intern</h3>
-                                    <time className="block mb-2 text-sm font-normal leading-none text-white-700">San Diego Supercomputer Center</time>
-                                    <time className="block mb-2 text-sm font-normal leading-none text-white-700">Jun 2022 - Sep 2022</time>
-                                    <ul className="list-disc pl-5 text-base font-exo text-white">
-                                        <li>
-                                            Collaborated with a team of 8 to develop a roommate-finder app in React Native for UCSD students.
-                                        </li>
-                                        <li>
-                                            Built 5+ reusable UI components for multiple buttons, sliders, and image holders.
-                                        </li>
-                                        <li>
-                                            Utilized Firebase Cloud to build an in-app messaging system.
-                                        </li>
+                            </div>
+                            <div className="flex flex-row">
+                                <div className="flex-1 flex flex-col justify-start gap-5">
+                                    <ul className="list-disc ml-4 space-y-2 text-[16px]">
+                                        <li>Key contributor in development of NeuroRes, an iOS chat app for 200+ neuroscience professionals, receiving positive stakeholder feedback.</li>
+                                        <li>Utilized Swift UI to create a responsive interface featuring interactive calendars, neuroscience journal blogs, communication channels, and image collections, following MVVM architecture.</li>
                                     </ul>
+                                    <a
+                                        href="https://apps.apple.com/gb/app/neurores/id1345523598"
+                                        target="_blank"
+                                        className="text-sm ml-4 underline flex flex-row items-center gap-2"
+                                    >
+                                        View Work
+                                        <FiExternalLink />
+                                    </a>
                                 </div>
-                            </li>
-                            <li className="relative mb-6 sm:mb-0">
-                                <div className="flex items-center">
-                                    <div className="z-10 flex items-center justify-center w-6 h-6 rounded-full ring-0 bg-blue-900 sm:ring-8 ring-gray-900 shrink-0">
-                                        <svg className="w-2.5 h-2.5 text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                                        </svg>
-                                    </div>
-                                    <div className="hidden sm:flex w-full h-1 bg-white"></div>
-                                </div>
-                                <div className="mt-3 sm:pe-8 border-2 p-5" style={{
-                                    background: "linear-gradient(135deg, #2D006A,#2D008A, #00FFFF)",
-                                    opacity: 0.85,
-                                    borderRadius: 12,
-                                    height: "350px",
-                                    width: "350px"
-                                }}>
-                                    <h3 className="text-lg font-semibold text-white">Software Engineer</h3>
-                                    <time className="block mb-2 text-sm font-normal leading-none text-white-700">San Diego Supercomputer Center</time>
-                                    <time className="block mb-2 text-sm font-normal leading-none text-white-700">Aug 2023 - Feb 2024</time>
-                                    <ul className="list-disc pl-5 text-base font-exo text-white">
-                                        <li>
-                                            Contributed to NeuroRes development, an iOS chat-based mobile app for 200+ neuroscience residents and attending physicians.
-                                        </li>
-                                        <li>
-                                            Built 10+ REST APIs for notifications, posts/comments, and chat services in Node.js and Go.
-                                        </li>
-                                        <li>
-                                            Integrated with the security system Shibboleth/SAML to support web-based single sign-on.
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ol>
-                        <group ref={closeRef} >
-                            <button
-                                ref={closeRef}
-                                onClick={() => {
-                                    props.setShowExp(false)
-                                    handleCloseMouseLeave()
-                                }}
-                                onMouseEnter={handleCloseMouseEnter}
-                                onMouseLeave={handleCloseMouseLeave}
-                                className="ml-10 bg-yellow-300 border-black border-2 text-black rounded-full w-10 h-10 text-3xl font-semibold hover:border-white"
-                                aria-label="close"
-                                style={{
-                                    pointerEvents: 'auto',
-                                }}
-                            >
-                                &times;
-                            </button>
-                        </group>
-                    </section>
-                }
-            </Html>
-        </>
-    );
-};
+                                <div className="flex-1 ml-10">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 place-items-end -mt-5">
+                                        <img
+                                            src="/assets/neurores2.png"
+                                            alt="Description of image"
+                                            className="w-32 md:w-3/4 h-auto rounded-lg shadow-lg col-span-1 border-2"
+                                        />
 
+                                        <img
+                                            src="/assets/neurores1.png"
+                                            alt="Description of image"
+                                            className="w-32 md:w-3/4 h-auto rounded-lg shadow-lg col-span-1 border-2"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-2">
+                            <div className="flex flex-row justify-start gap-10">
+                                <div>
+                                    <p className="font-bold text-lg">San Diego Supercomputer Center</p>
+                                    <p className="text-[12px] text-gray-300">August 2023 - February 2024</p>
+                                    <p className="text-[12px] text-gray-300">Software Engineer</p>
+                                </div>
+                            </div>
+                            <div className="flex flex-row">
+                                <div className="flex-1 flex flex-col justify-start gap-5">
+                                    <ul className="list-disc ml-4 space-y-2 text-[16px]">
+                                        <li>Collaborated with a team of 8 to develop a roommate-finder app in React Native for students at University of California, San Diego.</li>
+                                        <li>Utilized Firebase Cloud to build an in-app messaging system.</li>
+                                    </ul>
+                                    {/*<a*/}
+                                    {/*    href="https://apps.apple.com/gb/app/neurores/id1345523598"*/}
+                                    {/*    target="_blank"*/}
+                                    {/*    className="text-sm underline ml-4 flex flex-row items-center gap-2"*/}
+                                    {/*>*/}
+                                    {/*    View Work*/}
+                                    {/*    <FiExternalLink />*/}
+                                    {/*</a>*/}
+                                </div>
+                                <div className="flex-1 ml-10">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 place-items-end -mt-10">
+                                        <img
+                                            src="/assets/birdnest1.png"
+                                            alt="Description of image"
+                                            className="w-32 md:w-3/4 h-auto rounded-[20px] shadow-lg col-span-1 "
+                                        />
+
+                                        <img
+                                            src="/assets/birdnest2.png"
+                                            alt="Description of image"
+                                            className="w-32 md:w-3/4 h-auto rounded-lg shadow-lg col-span-1"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </motion.div>
+            }
+        </AnimatePresence>
+    )
+}
 export default Experience
