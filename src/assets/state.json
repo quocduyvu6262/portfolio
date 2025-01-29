@@ -70,7 +70,7 @@
                       0.5,
                       0.5,
                       0.5,
-                      0
+                      0.5
                     ],
                     "type": "bezier",
                     "value": 0
@@ -81,7 +81,7 @@
                     "connectedRight": true,
                     "handles": [
                       0.5,
-                      1,
+                      0.5,
                       0.5,
                       0
                     ],
@@ -128,7 +128,7 @@
                       0.5,
                       0.5,
                       0.5,
-                      0
+                      0.5
                     ],
                     "type": "bezier",
                     "value": 4.4
@@ -139,7 +139,7 @@
                     "connectedRight": true,
                     "handles": [
                       0.5,
-                      1,
+                      0.5,
                       0.5,
                       0
                     ],
@@ -186,7 +186,7 @@
                       0.5,
                       0.5,
                       0.5,
-                      0
+                      0.5
                     ],
                     "type": "bezier",
                     "value": 8
@@ -197,7 +197,7 @@
                     "connectedRight": true,
                     "handles": [
                       0.5,
-                      1,
+                      0.5,
                       0.5,
                       0
                     ],
@@ -383,6 +383,7 @@
   },
   "definitionVersion": "0.4.0",
   "revisionHistory": [
+    "aKSH16vzhYvTNpih",
     "8uqQmOzLOj7hHdpp",
     "-vDeYTXVNTAxVsjX",
     "hhBIRyGXErFZkD5u",

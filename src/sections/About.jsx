@@ -4,7 +4,7 @@ import { MdEmail } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import { motion, AnimatePresence } from "motion/react"
 
-const About = ({scrollRef, showAbout, setShowAbout}) => {
+const About = ({scrollRef, showAbout, setShowAbout, isScrolling, setIsScrolling, isScrollingRef}) => {
 
     useEffect(() => {
         let frameId;
@@ -16,9 +16,9 @@ const About = ({scrollRef, showAbout, setShowAbout}) => {
 
             const roundedOffset = parseFloat(offset.toFixed(1));
             const roundedLastOffset = parseFloat(lastOffset?.toFixed(1) ?? -1);
-            if (roundedOffset !== roundedLastOffset) {
+            if (roundedOffset !== roundedLastOffset && !isScrollingRef.current) {
                 lastOffset = offset;
-                const shouldShowAbout = offset >= 0.2 && offset < 0.5
+                const shouldShowAbout = offset >= 0.2 && offset < 0.4
                 setShowAbout(prev => (prev !== shouldShowAbout ? shouldShowAbout : prev));
             }
 
@@ -40,6 +40,17 @@ const About = ({scrollRef, showAbout, setShowAbout}) => {
             cancelAnimationFrame(frameId)
         };
     }, [scrollRef, setShowAbout]);
+
+    useEffect(() => {
+        if (isScrolling) {
+            const timeout = setTimeout(() => {
+                isScrollingRef.current = false
+                setIsScrolling(false)
+            }, 1000); // 1000ms timeout to allow smooth scrolling to finish
+
+            return () => clearTimeout(timeout); // Cleanup timeout if the component unmounts or state changes
+        }
+    }, [isScrolling]);
 
     return (
         <>

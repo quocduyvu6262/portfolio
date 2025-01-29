@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "motion/react"
 import { FiExternalLink } from "react-icons/fi";
 
 
-const Experience = ({scrollRef, showExperience, setShowExperience}) => {
+const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, setIsScrolling, isScrollingRef}) => {
 
     useEffect(() => {
         let frameId;
@@ -16,10 +16,10 @@ const Experience = ({scrollRef, showExperience, setShowExperience}) => {
 
             const roundedOffset = parseFloat(offset.toFixed(1));
             const roundedLastOffset = parseFloat(lastOffset?.toFixed(1) ?? -1);
-            if (roundedOffset !== roundedLastOffset) {
+            if (roundedOffset !== roundedLastOffset && !isScrollingRef.current) {
                 lastOffset = offset;
-                const shouldShowExperience = offset >= 0.5 && offset < 0.8
-                setShowExperience(prev => (prev !== shouldShowExperience ? shouldShowExperience : prev));
+                const shouldShow = offset >= 0.55 && offset < 0.70
+                setShowExperience(prev => (prev !== shouldShow ? shouldShow : prev));
             }
 
             frameId = requestAnimationFrame(handleScrollPosition);
@@ -40,6 +40,17 @@ const Experience = ({scrollRef, showExperience, setShowExperience}) => {
             cancelAnimationFrame(frameId)
         };
     }, [scrollRef, setShowExperience]);
+
+    useEffect(() => {
+        if (isScrolling) {
+            const timeout = setTimeout(() => {
+                isScrollingRef.current = false
+                setIsScrolling(false)
+            }, 1000); // 1000ms timeout to allow smooth scrolling to finish
+
+            return () => clearTimeout(timeout); // Cleanup timeout if the component unmounts or state changes
+        }
+    }, [isScrolling]);
 
 
     return (
@@ -114,14 +125,6 @@ const Experience = ({scrollRef, showExperience, setShowExperience}) => {
                                         <li>Collaborated with a team of 8 to develop a roommate-finder app in React Native for students at University of California, San Diego.</li>
                                         <li>Utilized Firebase Cloud to build an in-app messaging system.</li>
                                     </ul>
-                                    {/*<a*/}
-                                    {/*    href="https://apps.apple.com/gb/app/neurores/id1345523598"*/}
-                                    {/*    target="_blank"*/}
-                                    {/*    className="text-sm underline ml-4 flex flex-row items-center gap-2"*/}
-                                    {/*>*/}
-                                    {/*    View Work*/}
-                                    {/*    <FiExternalLink />*/}
-                                    {/*</a>*/}
                                 </div>
                                 <div className="flex-1 ml-10">
                                     <div className="grid grid-cols-1 md:grid-cols-2 place-items-end -mt-10">
