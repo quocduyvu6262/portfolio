@@ -38,7 +38,7 @@ const About = ({scrollRef, showAbout, setShowAbout}) => {
                                     <p className="text-sm text-white font-sans font-semibold">Linkedin</p>
                                 </a>
                                 <a href="mailto:quocduyvu6262@gmail.com" target="_blank" className="flex flex-row gap-2 border-2 items-center p-1 rounded-md">
-                                    <smEmail color="white" size={20} />
+                                    <MdEmail color="white" size={20} />
                                     <p className="text-sm text-white font-sans font-semibold">Email</p>
                                 </a>
                             </div>
