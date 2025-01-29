@@ -4,7 +4,7 @@ import { RxAvatar } from "react-icons/rx";
 import { CgWorkAlt } from "react-icons/cg";
 import { IoCodeSlashOutline } from "react-icons/io5";
 
-const NavBar = ({scrollRef, showAbout, setShowAbout}) => {
+const NavBar = ({scrollRef, showAbout, setShowAbout, setShowExperience}) => {
 
     const [active, setActive] = useState("Home")
     const [isScrolling, setIsScrolling] = useState(false);
@@ -86,6 +86,7 @@ const NavBar = ({scrollRef, showAbout, setShowAbout}) => {
                 <button
                     onClick={() => {
                         setActive("Experience")
+                        setShowExperience(true)
                         handleScroll(2)
                     }}
                     className={`flex flex-row gap-3 items-center ${active === "Experience" ? "bg-[rgba(50,65,95,1.8)]" : "hover:bg-[rgba(50,65,95,1.8)]"} py-1 px-3 rounded-[12px]`}>
