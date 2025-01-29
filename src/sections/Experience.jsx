@@ -19,7 +19,7 @@ const Experience = ({scrollRef, showExperience, setShowExperience}) => {
                 >
                     <div className="sticky top-3 right-3 flex justify-end w-full px-3">
                         <button onClick={() => setShowExperience(false)}>
-                            <IoMdClose size={30} />
+                            <IoMdClose color="white" size={30} />
                         </button>
                     </div>
                     <div className="flex flex-col gap-5 2xl:gap-0 w-3/4 text-white font-sans">

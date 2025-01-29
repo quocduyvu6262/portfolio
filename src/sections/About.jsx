@@ -11,17 +11,22 @@ const About = ({scrollRef, showAbout, setShowAbout}) => {
             {showAbout &&
                 <motion.div
                     key="about"
-                    className={`absolute top-1/2 translate -translate-x-1/2 -translate-y-1/2 bg-[rgba(10,25,47,0.85)] left-1/2 flex items-start justify-center sm:w-1/2 2xl:w-1/3 2xl:h-[40%] z-10 rounded-[18px]`}
+                    className={`absolute top-1/2 translate overflow-x-auto -translate-x-1/2 -translate-y-1/2 bg-[rgba(10,25,47,0.85)] left-1/2 flex items-start justify-center sm:w-1/2 2xl:w-1/3 2xl:h-[40%] z-10 rounded-[18px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-with-1 scrollbar-track-transparent`}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
                 >
+                    <div className="fixed top-3 right-3 flex justify-end w-full px-3">
+                        <button onClick={() => setShowAbout(false)}>
+                            <IoMdClose color="white" size={30} />
+                        </button>
+                    </div>
                     <div className="flex sm:flex-row sm:gap-0 gap-0 xl:items-start flex-col w-full sm:h-full sm:p-10 p-5">
 
                         <div className="xl:flex flex-1 justify-center hidden">Avatar</div>
 
-                        <div className="flex flex-col sm:p-0 p-5 gap-5 xl:w-1/2 xl:sm:mr-[10%] overflow-auto h-full w-full">
+                        <div className="flex flex-col sm:p-0 p-5 gap-5 xl:w-1/2 xl:sm:mr-[10%] h-full w-full">
                             <p className="text-3xl text-white font-bold">Tony Vu</p>
                             <div className="flex flex-row gap-2">
                                 <a href="https://github.com/quocduyvu6262" target="_blank" className="flex flex-row gap-2 border-2 items-center p-1 rounded-md">
@@ -52,11 +57,6 @@ const About = ({scrollRef, showAbout, setShowAbout}) => {
                         </div>
                     </div>
 
-                    <div className="absolute right-3 top-3">
-                        <button onClick={() => setShowAbout(!showAbout)}>
-                            <IoMdClose size={30} />
-                        </button>
-                    </div>
                 </motion.div>
             }
         </AnimatePresence>
