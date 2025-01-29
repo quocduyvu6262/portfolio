@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import { GoHome } from "react-icons/go";
 import { RxAvatar } from "react-icons/rx";
 import { CgWorkAlt } from "react-icons/cg";
@@ -8,41 +8,35 @@ const NavBar = ({scrollRef, showAbout, setShowAbout, setShowExperience}) => {
 
     const [active, setActive] = useState("Home")
     const [isScrolling, setIsScrolling] = useState(false);
-
+    const isScrollingRef = useRef(false)
     const handleScroll = (page) => {
         if (scrollRef.current) {
+            isScrollingRef.current = true
             setIsScrolling(true)
             scrollRef.current.el.scrollTo({ top: window.innerHeight * page, behavior: 'smooth' });
         }
     }
 
     useEffect(() => {
+        let frameId;
+        let lastOffset = null;
         const handleScrollPosition = () => {
-            if (scrollRef.current) {
-                const scrollPosition = scrollRef.current.el.scrollTop;
-                const page = Math.floor(scrollPosition / window.innerHeight);
-
-                switch (page) {
-                    case 0:
-                        setActive('Home');
-                        break;
-                    case 1:
-                        setActive('About');
-                        break;
-                    case 2:
-                        setActive('Experience');
-                        break;
-                    case 3:
-                        setActive('Projects');
-                        break;
-                    default:
-                        break;
-                }
+            if (!scrollRef.current) return;
+            const offset = scrollRef.current.offset;
+            const roundedOffset = parseFloat(offset.toFixed(1));
+            const roundedLastOffset = parseFloat(lastOffset?.toFixed(1) ?? -1);
+            if (roundedOffset !== roundedLastOffset && !isScrollingRef.current) {
+                lastOffset = offset;
+                if (offset >= 0.2 && offset < 0.5) setActive("About")
+                else if (offset >= 0.5 && offset < 0.8) setActive("Experience")
+                else if (offset >= 0.8) setActive("Projects")
+                else setActive("Home")
             }
+            if (!isScrollingRef.current) frameId = requestAnimationFrame(handleScrollPosition);
         };
         const interval = setInterval(() => {
             const scrollElement = scrollRef.current?.el;
-            if (scrollElement && !isScrolling) {
+            if (scrollElement && !isScrollingRef.current) {
                 scrollElement.addEventListener('scroll', handleScrollPosition);
                 clearInterval(interval)
             }
@@ -53,13 +47,15 @@ const NavBar = ({scrollRef, showAbout, setShowAbout, setShowExperience}) => {
             if (scrollElement) {
                 scrollElement.removeEventListener('scroll', handleScrollPosition);
             }
+            cancelAnimationFrame(frameId)
         };
-    }, [scrollRef, setActive, isScrolling]);
+    }, [scrollRef, setActive]);
 
     useEffect(() => {
         if (isScrolling) {
             const timeout = setTimeout(() => {
-                setIsScrolling(false);
+               isScrollingRef.current = false
+                setIsScrolling(false)
             }, 1000); // 1000ms timeout to allow smooth scrolling to finish
 
             return () => clearTimeout(timeout); // Cleanup timeout if the component unmounts or state changes
@@ -81,7 +77,6 @@ const NavBar = ({scrollRef, showAbout, setShowAbout, setShowExperience}) => {
                 <button
                     onClick={() => {
                         setActive("About")
-                        setShowAbout(true)
                         handleScroll(1)
                     }}
                     className={`flex flex-row gap-3 items-center ${active === "About" ? "bg-[rgba(50,65,95,1.8)]" : "hover:bg-[rgba(50,65,95,1.8)]"} py-1 px-3 rounded-[12px]`}>
@@ -91,7 +86,6 @@ const NavBar = ({scrollRef, showAbout, setShowAbout, setShowExperience}) => {
                 <button
                     onClick={() => {
                         setActive("Experience")
-                        setShowExperience(true)
                         handleScroll(2)
                     }}
                     className={`flex flex-row gap-3 items-center ${active === "Experience" ? "bg-[rgba(50,65,95,1.8)]" : "hover:bg-[rgba(50,65,95,1.8)]"} py-1 px-3 rounded-[12px]`}>

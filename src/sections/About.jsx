@@ -6,6 +6,41 @@ import { motion, AnimatePresence } from "motion/react"
 
 const About = ({scrollRef, showAbout, setShowAbout}) => {
 
+    useEffect(() => {
+        let frameId;
+        let lastOffset = null;
+        const handleScrollPosition = () => {
+            if (!scrollRef.current) return;
+
+            const offset = scrollRef.current.offset;
+
+            const roundedOffset = parseFloat(offset.toFixed(1));
+            const roundedLastOffset = parseFloat(lastOffset?.toFixed(1) ?? -1);
+            if (roundedOffset !== roundedLastOffset) {
+                lastOffset = offset;
+                const shouldShowAbout = offset >= 0.2 && offset < 0.5
+                setShowAbout(prev => (prev !== shouldShowAbout ? shouldShowAbout : prev));
+            }
+
+            frameId = requestAnimationFrame(handleScrollPosition);
+        };
+        const interval = setInterval(() => {
+            const scrollElement = scrollRef.current?.el;
+            if (scrollElement) {
+                scrollElement.addEventListener('scroll', handleScrollPosition);
+                clearInterval(interval)
+            }
+        }, 100)
+        return () => {
+            clearInterval(interval)
+            const scrollElement = scrollRef.current?.el;
+            if (scrollElement) {
+                scrollElement.removeEventListener('scroll', handleScrollPosition);
+            }
+            cancelAnimationFrame(frameId)
+        };
+    }, [scrollRef, setShowAbout]);
+
     return (
         <>
             <AnimatePresence initial={false}>

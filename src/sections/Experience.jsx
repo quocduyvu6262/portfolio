@@ -6,6 +6,42 @@ import { FiExternalLink } from "react-icons/fi";
 
 const Experience = ({scrollRef, showExperience, setShowExperience}) => {
 
+    useEffect(() => {
+        let frameId;
+        let lastOffset = null;
+        const handleScrollPosition = () => {
+            if (!scrollRef.current) return;
+
+            const offset = scrollRef.current.offset;
+
+            const roundedOffset = parseFloat(offset.toFixed(1));
+            const roundedLastOffset = parseFloat(lastOffset?.toFixed(1) ?? -1);
+            if (roundedOffset !== roundedLastOffset) {
+                lastOffset = offset;
+                const shouldShowExperience = offset >= 0.5 && offset < 0.8
+                setShowExperience(prev => (prev !== shouldShowExperience ? shouldShowExperience : prev));
+            }
+
+            frameId = requestAnimationFrame(handleScrollPosition);
+        };
+        const interval = setInterval(() => {
+            const scrollElement = scrollRef.current?.el;
+            if (scrollElement) {
+                scrollElement.addEventListener('scroll', handleScrollPosition);
+                clearInterval(interval)
+            }
+        }, 100)
+        return () => {
+            clearInterval(interval)
+            const scrollElement = scrollRef.current?.el;
+            if (scrollElement) {
+                scrollElement.removeEventListener('scroll', handleScrollPosition);
+            }
+            cancelAnimationFrame(frameId)
+        };
+    }, [scrollRef, setShowExperience]);
+
+
     return (
         <AnimatePresence initial={false}>
             {showExperience &&
