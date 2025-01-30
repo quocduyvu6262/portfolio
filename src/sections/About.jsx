@@ -58,7 +58,7 @@ const About = ({scrollRef, showAbout, setShowAbout, isScrolling, setIsScrolling,
                 {showAbout &&
                     <motion.div
                         key="about"
-                        className={`absolute top-1/2 translate overflow-x-auto -translate-x-1/2 -translate-y-1/2 bg-[rgba(10,25,47,0.85)] left-1/2 flex items-start justify-center sm:w-1/2 2xl:w-[800px] z-10 rounded-[18px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-with-1 scrollbar-track-transparent`}
+                        className={`absolute top-1/2 translate overflow-y-auto -translate-x-1/2 -translate-y-1/2 bg-[rgba(10,25,47,0.85)] left-1/2 flex items-start justify-center sm:w-2/3 max-w-[750px] max-h-[50vh] sm:h-auto z-10 rounded-[18px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-with-1 scrollbar-track-transparent`}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -69,17 +69,17 @@ const About = ({scrollRef, showAbout, setShowAbout, isScrolling, setIsScrolling,
                                 <IoMdClose color="white" size={30} />
                             </button>
                         </div>
-                        <div className="flex overflow-auto sm:flex-row sm:gap-0 gap-0 xl:items-start flex-col w-full sm:h-full sm:p-10 p-5">
+                        <div className="flex overflow-auto sm:flex-row items-start justify-center w-full p-10">
 
-                            <div className="xl:flex flex-1 justify-center hidden">
+                            <div className="md:flex flex-1 justify-center hidden">
                                 <img
                                     src="/assets/avatar.jpg"
                                     alt="Description of image"
-                                    className="sm:w-1/2 2xl:w-[150px] h-auto rounded-full border-gray-400 border-[2px] shadow-lg col-span-1"
+                                    className="min-w-[120px] w-1/2 h-auto rounded-full border-gray-400 border-[2px] shadow-lg col-span-1"
                                 />
                             </div>
 
-                            <div className="flex flex-col sm:p-0 p-5 gap-5 xl:w-1/2 xl:sm:mr-[10%] h-full w-full">
+                            <div className="flex flex-1 flex-col sm:p-0 p-5 gap-5">
                                 <p className="text-3xl text-white font-bold">Tony Vu</p>
                                 <div className="flex flex-row gap-2">
                                     <a href="https://github.com/quocduyvu6262" target="_blank" className="flex flex-row gap-2 border-2 items-center p-1 rounded-md">
