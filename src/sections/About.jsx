@@ -58,7 +58,7 @@ const About = ({scrollRef, showAbout, setShowAbout, isScrolling, setIsScrolling,
                 {showAbout &&
                     <motion.div
                         key="about"
-                        className={`absolute top-1/2 translate overflow-x-auto -translate-x-1/2 -translate-y-1/2 bg-[rgba(10,25,47,0.85)] left-1/2 flex items-start justify-center sm:w-1/2 2xl:w-1/4 2xl:h-[35%] z-10 rounded-[18px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-with-1 scrollbar-track-transparent`}
+                        className={`absolute top-1/2 translate overflow-x-auto -translate-x-1/2 -translate-y-1/2 bg-[rgba(10,25,47,0.85)] left-1/2 flex items-start justify-center sm:w-1/2 2xl:w-[800px] z-10 rounded-[18px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-with-1 scrollbar-track-transparent`}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -69,7 +69,7 @@ const About = ({scrollRef, showAbout, setShowAbout, isScrolling, setIsScrolling,
                                 <IoMdClose color="white" size={30} />
                             </button>
                         </div>
-                        <div className="flex sm:flex-row sm:gap-0 gap-0 xl:items-start flex-col w-full sm:h-full sm:p-10 p-5">
+                        <div className="flex overflow-auto sm:flex-row sm:gap-0 gap-0 xl:items-start flex-col w-full sm:h-full sm:p-10 p-5">
 
                             <div className="xl:flex flex-1 justify-center hidden">
                                 <img
