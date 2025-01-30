@@ -4,7 +4,7 @@ import { RxAvatar } from "react-icons/rx";
 import { CgWorkAlt } from "react-icons/cg";
 import { IoCodeSlashOutline } from "react-icons/io5";
 
-const NavBar = ({scrollRef, isScrolling, setIsScrolling, isScrollingRef}) => {
+const NavBar = ({scrollRef, isScrolling, setIsScrolling, isScrollingRef, setShowAbout, setShowExperience, setShowProject}) => {
 
     const [active, setActive] = useState("Home")
     const handleScroll = (page) => {
@@ -66,6 +66,9 @@ const NavBar = ({scrollRef, isScrolling, setIsScrolling, isScrollingRef}) => {
             <button
                 onClick={() => {
                     setActive("Home")
+                    setShowAbout(false)
+                    setShowExperience(false)
+                    setShowProject(false)
                     handleScroll(0)
                 }}
                 className={`flex flex-row gap-3 items-center ${active === "Home" ? "bg-[rgba(50,65,95,1.8)]" : "hover:bg-[rgba(50,65,95,1.8)]"} py-1 px-3 rounded-[12px]`}>
@@ -76,6 +79,8 @@ const NavBar = ({scrollRef, isScrolling, setIsScrolling, isScrollingRef}) => {
                 <button
                     onClick={() => {
                         setActive("About")
+                        setShowExperience(false)
+                        setShowProject(false)
                         handleScroll(1)
                     }}
                     className={`flex flex-row gap-3 items-center ${active === "About" ? "bg-[rgba(50,65,95,1.8)]" : "hover:bg-[rgba(50,65,95,1.8)]"} py-1 px-3 rounded-[12px]`}>
@@ -85,6 +90,8 @@ const NavBar = ({scrollRef, isScrolling, setIsScrolling, isScrollingRef}) => {
                 <button
                     onClick={() => {
                         setActive("Experience")
+                        setShowAbout(false)
+                        setShowProject(false)
                         handleScroll(2)
                     }}
                     className={`flex flex-row gap-3 items-center ${active === "Experience" ? "bg-[rgba(50,65,95,1.8)]" : "hover:bg-[rgba(50,65,95,1.8)]"} py-1 px-3 rounded-[12px]`}>
@@ -94,6 +101,8 @@ const NavBar = ({scrollRef, isScrolling, setIsScrolling, isScrollingRef}) => {
                 <button
                     onClick={() => {
                         setActive("Projects")
+                        setShowExperience(false)
+                        setShowAbout(false)
                         handleScroll(3)
                     }}
                     className={`flex flex-row gap-3 items-center ${active === "Projects" ? "bg-[rgba(50,65,95,1.8)]" : "hover:bg-[rgba(50,65,95,1.8)]"} py-1 px-3 rounded-[12px]`}>

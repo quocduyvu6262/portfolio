@@ -22,6 +22,7 @@ const App = () => {
                 showAbout={showAbout}
                 setShowAbout={setShowAbout}
                 setShowExperience={setShowExperience}
+                setShowProject={setShowProject}
                 isScrolling={isScrolling}
                 setIsScrolling={setIsScrolling}
                 isScrollingRef={isScrollingRef}

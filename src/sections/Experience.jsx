@@ -79,7 +79,7 @@ const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, 
                                 </div>
                             </div>
                             <div className="flex flex-row">
-                                <div className="flex-1 flex flex-col justify-start gap-5">
+                                <div className="flex-1 flex flex-col justify-start gap-2">
                                     <ul className="list-disc ml-4 space-y-2 text-[16px]">
                                         <li>Key contributor in development of NeuroRes, an iOS chat app for 200+ neuroscience professionals, receiving positive stakeholder feedback.</li>
                                         <li>Utilized Swift UI to create a responsive interface featuring interactive calendars, neuroscience journal blogs, communication channels, and image collections, following MVVM architecture.</li>
@@ -94,7 +94,7 @@ const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, 
                                     </a>
                                 </div>
                                 <div className="flex-1 ml-10">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 place-items-end -mt-5">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 place-items-end -mt-10">
                                         <img
                                             src="/assets/neurores2.png"
                                             alt="Description of image"

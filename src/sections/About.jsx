@@ -58,7 +58,7 @@ const About = ({scrollRef, showAbout, setShowAbout, isScrolling, setIsScrolling,
                 {showAbout &&
                     <motion.div
                         key="about"
-                        className={`absolute top-1/2 translate overflow-x-auto -translate-x-1/2 -translate-y-1/2 bg-[rgba(10,25,47,0.85)] left-1/2 flex items-start justify-center sm:w-1/2 2xl:w-1/3 2xl:h-[40%] z-10 rounded-[18px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-with-1 scrollbar-track-transparent`}
+                        className={`absolute top-1/2 translate overflow-x-auto -translate-x-1/2 -translate-y-1/2 bg-[rgba(10,25,47,0.85)] left-1/2 flex items-start justify-center sm:w-1/2 2xl:w-1/4 2xl:h-[35%] z-10 rounded-[18px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-with-1 scrollbar-track-transparent`}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -71,7 +71,13 @@ const About = ({scrollRef, showAbout, setShowAbout, isScrolling, setIsScrolling,
                         </div>
                         <div className="flex sm:flex-row sm:gap-0 gap-0 xl:items-start flex-col w-full sm:h-full sm:p-10 p-5">
 
-                            <div className="xl:flex flex-1 justify-center hidden">Avatar</div>
+                            <div className="xl:flex flex-1 justify-center hidden">
+                                <img
+                                    src="/assets/avatar.jpg"
+                                    alt="Description of image"
+                                    className="sm:w-1/2 2xl:w-[150px] h-auto rounded-full border-gray-400 border-[2px] shadow-lg col-span-1"
+                                />
+                            </div>
 
                             <div className="flex flex-col sm:p-0 p-5 gap-5 xl:w-1/2 xl:sm:mr-[10%] h-full w-full">
                                 <p className="text-3xl text-white font-bold">Tony Vu</p>
@@ -89,7 +95,7 @@ const About = ({scrollRef, showAbout, setShowAbout, isScrolling, setIsScrolling,
                                         <p className="text-sm text-white font-sans font-semibold">Email</p>
                                     </a>
                                 </div>
-                                <p className="font-sans text-white">I am currently pursue a master in Computer Science at Texas A&M University, where I focus on cloud and distributed system. Before that, I have around 1 year experience in fullstack and iOS development.</p>
+                                <p className="font-sans text-white">I'm a Master's student in Computer Science at Texas A&M University, specializing in cloud computing and distributed systems. Previously, I worked for a year in full-stack and iOS development.</p>
                                 <div className="gap-3 flex flex-col">
                                     <p className="text-2xl text-white font-semibold">Education</p>
                                     <div>
