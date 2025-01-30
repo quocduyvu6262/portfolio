@@ -57,7 +57,7 @@ const Project = ({scrollRef, showProject, setShowProject, isScrolling, setIsScro
             {showProject &&
                 <motion.div
                     key="about"
-                    className={`absolute top-1/2 pt-5 pb-10 translate overflow-y-auto -translate-x-1/2 -translate-y-1/2 bg-[rgba(10,25,47,0.85)] left-1/2 flex flex-col items-center justify-start w-[90%] sm:w-[60%] 2xl:w-1/3 h-[70%] 2xl:h-[50%] z-10 rounded-[18px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-with-1 scrollbar-track-transparent`}
+                    className={`absolute top-1/2 pt-5 pb-10 translate overflow-y-auto -translate-x-1/2 -translate-y-1/2 bg-[rgba(10,25,47,0.85)] left-1/2 flex flex-col items-center justify-start w-2/3 max-w-[900px] h-3/4 max-h-[70vh] z-10 rounded-[18px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-with-1 scrollbar-track-transparent`}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -75,7 +75,7 @@ const Project = ({scrollRef, showProject, setShowProject, isScrolling, setIsScro
                                 alt="Description of image"
                                 className="w-full md:rounded-[30px] rounded-[22px] border-[2px] h-auto shadow-lg"
                             />
-                            <div className="flex flex-row gap-5 w-full justify-between font-sans text-white">
+                            <div className="flex md:flex-row flex-col md:gap-5 gap-2 w-full justify-between font-sans text-white">
                                 <div className="flex-1 font-bold text-lg">Youtube Comments Toxicity Analyzer</div>
                                 <div className="flex-1 text-gray-400 text-[14px] space-y-1">
                                     <div>Developed web application with Next.js and FastAPI to analyze social media comments toxicity. Integrated Google Perspective machine to quantify toxicity score.</div>
@@ -97,7 +97,7 @@ const Project = ({scrollRef, showProject, setShowProject, isScrolling, setIsScro
                                 alt="Description of image"
                                 className="w-full md:rounded-[30px] rounded-[22px] h-auto shadow-lg"
                             />
-                            <div className="flex flex-row gap-5 w-full justify-between font-sans text-white">
+                            <div className="flex md:flex-row flex-col md:gap-5 gap-2 w-full justify-between font-sans text-white">
                                 <div className="flex-1 font-bold text-lg">GRC Controls Automation</div>
                                 <div className="flex-1 text-gray-400 text-[14px] space-y-1">
                                     <div>Collaborated with a team of 7 to develop a Ruby on Rails SaaS application for scanning Docker image vulnerability, and streamlining compliance management with role-based access control.</div>
@@ -119,7 +119,7 @@ const Project = ({scrollRef, showProject, setShowProject, isScrolling, setIsScro
                                 alt="Description of image"
                                 className="w-full md:rounded-[30px] rounded-[22px] border-[2px] h-auto shadow-lg"
                             />
-                            <div className="flex flex-row gap-5 w-full justify-between font-sans text-white">
+                            <div className="flex md:flex-row flex-col md:gap-5 gap-2 w-full justify-between font-sans text-white">
                                 <div className="flex-1 font-bold text-lg">Traffic Signal Control</div>
                                 <div className="flex-1 text-gray-400 text-[14px] space-y-1">
                                     <div>Collaborated with a team of 2 to integrate the Continual Backpropagation algorithm into the Deep-Q Networks
@@ -142,7 +142,7 @@ const Project = ({scrollRef, showProject, setShowProject, isScrolling, setIsScro
                                 alt="Description of image"
                                 className="w-full md:rounded-[30px] rounded-[22px] border-[2px] h-auto shadow-lg"
                             />
-                            <div className="flex flex-row gap-5 w-full justify-between font-sans text-white">
+                            <div className="flex md:flex-row flex-col md:gap-5 gap-2 w-full justify-between font-sans text-white">
                                 <div className="flex-1 font-bold text-lg">Note Taking App</div>
                                 <div className="flex-1 text-gray-400 text-[14px] space-y-1">
                                     <div>Developed a note-taking app that enables users to share their notes with others.</div>

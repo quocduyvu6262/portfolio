@@ -58,7 +58,7 @@ const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, 
             {showExperience &&
                 <motion.div
                     key="about"
-                    className={`absolute top-1/2 py-10 translate overflow-y-auto -translate-x-1/2 -translate-y-1/2 pt-3 bg-[rgba(10,25,47,0.85)] w-2/3 max-w-[900px] h-3/4 max-h-[50vh] left-1/2 flex flex-col items-center justify-start z-10 rounded-[18px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-with-1 scrollbar-track-transparent`}
+                    className={`absolute top-1/2 pb-5 translate overflow-y-auto -translate-x-1/2 -translate-y-1/2 pt-3 bg-[rgba(10,25,47,0.85)] sm:w-3/4 max-w-[1000px] max-h-[70vh] left-1/2 flex flex-col items-center justify-start z-10 rounded-[18px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-with-1 scrollbar-track-transparent`}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -69,7 +69,7 @@ const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, 
                             <IoMdClose color="white" size={30} />
                         </button>
                     </div>
-                    <div className="flex flex-col gap-5 2xl:gap-0 w-3/4 text-white font-sans">
+                    <div className="flex flex-col gap-10 w-3/4 text-white font-sans">
                         <div className="flex flex-col gap-2">
                             <div className="flex flex-row justify-start gap-10">
                                 <div>
@@ -78,7 +78,7 @@ const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, 
                                     <p className="text-[12px] text-gray-300">Software Engineer</p>
                                 </div>
                             </div>
-                            <div className="flex xl:flex-row flex-col gap-10">
+                            <div className="flex xl:flex-row flex-col gap-14">
                                 <div className="flex-1 flex flex-col justify-start gap-2">
                                     <ul className="list-disc ml-4 space-y-2 text-[16px]">
                                         <li>Key contributor in development of NeuroRes, an iOS chat app for 200+ neuroscience professionals, receiving positive stakeholder feedback.</li>
@@ -93,18 +93,18 @@ const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, 
                                         <FiExternalLink />
                                     </a>
                                 </div>
-                                <div className="flex-1">
+                                <div className="flex-1 -mt-10">
                                     <div className="grid grid-cols-1 md:grid-cols-2 place-items-end gap-5">
                                         <img
                                             src="/assets/neurores2.png"
                                             alt="Description of image"
-                                            className="w-full h-auto rounded-lg shadow-lg col-span-1 border-2"
+                                            className="w-full h-auto rounded-[18px] shadow-lg col-span-1 border-2"
                                         />
 
                                         <img
                                             src="/assets/neurores1.png"
                                             alt="Description of image"
-                                            className="w-full h-auto rounded-lg shadow-lg col-span-1 border-2"
+                                            className="w-full h-auto rounded-[18px] shadow-lg col-span-1 border-2"
                                         />
                                     </div>
                                 </div>
@@ -119,14 +119,14 @@ const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, 
                                     <p className="text-[12px] text-gray-300">Software Engineer Intern</p>
                                 </div>
                             </div>
-                            <div className="flex xl:flex-row flex-col gap-10">
+                            <div className="flex xl:flex-row flex-col gap-14">
                                 <div className="flex-1 flex flex-col justify-start gap-5">
                                     <ul className="list-disc ml-4 space-y-2 text-[16px]">
                                         <li>Collaborated with a team of 8 to develop a roommate-finder app in React Native for students at University of California, San Diego.</li>
                                         <li>Utilized Firebase Cloud to build an in-app messaging system.</li>
                                     </ul>
                                 </div>
-                                <div className="flex-1">
+                                <div className="flex-1 -mt-10">
                                     <div className="grid grid-cols-1 md:grid-cols-2 place-items-end gap-5">
                                         <img
                                             src="/assets/birdnest1.png"
