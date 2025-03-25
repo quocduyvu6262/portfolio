@@ -70,6 +70,36 @@ const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, 
                         </button>
                     </div>
                     <div className="flex flex-col gap-10 w-3/4 text-white font-sans">
+
+                        <div className="flex flex-col gap-2">
+                            <div className="flex flex-row justify-start gap-10">
+                                <div>
+                                    <p className="font-bold text-lg">The New York Times</p>
+                                    <p className="text-[12px] text-gray-300">Incoming June 2025 - August 2025</p>
+                                    <p className="text-[12px] text-gray-300">Software Engineer Intern</p>
+                                </div>
+                            </div>
+                            <div className="flex xl:flex-row flex-col gap-14">
+                                <div className="flex-1 flex flex-col justify-start gap-5">
+                                    <ul className="list-disc ml-4 space-y-2 text-[16px]">
+                                        <li>Incoming Software Engineer Intern at the New York Times Games team, focusing on developing and enhancing the game application.</li>
+                                    </ul>
+                                </div>
+                                <div className="flex-1 -mt-10">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 place-items-end gap-5">
+                                        <div
+                                            className="w-full h-auto rounded-lg shadow-lg col-span-1"
+                                        />
+
+                                        <div
+                                            className="w-full h-auto rounded-lg shadow-lg col-span-1"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <div className="flex flex-col gap-2">
                             <div className="flex flex-row justify-start gap-10">
                                 <div>
