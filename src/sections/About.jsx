@@ -58,7 +58,7 @@ const About = ({scrollRef, showAbout, setShowAbout, isScrolling, setIsScrolling,
                 {showAbout &&
                     <motion.div
                         key="about"
-                        className={`absolute top-1/2 translate overflow-y-auto -translate-x-1/2 -translate-y-1/2 bg-[rgba(10,25,47,0.85)] left-1/2 flex items-start justify-center sm:w-2/3 max-w-[750px] max-h-[70vh] sm:h-auto z-10 rounded-[18px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-with-1 scrollbar-track-transparent`}
+                        className={`absolute top-1/2 translate overflow-y-auto -translate-x-1/2 -translate-y-1/2 bg-[rgba(10,25,47,0.85)] left-1/2 flex items-start justify-center w-[85%] sm:w-2/3 max-w-[750px] max-h-[70vh] sm:h-auto z-10 rounded-[18px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-with-1 scrollbar-track-transparent`}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}

@@ -57,7 +57,7 @@ const Project = ({scrollRef, showProject, setShowProject, isScrolling, setIsScro
             {showProject &&
                 <motion.div
                     key="about"
-                    className={`absolute top-1/2 pt-5 pb-10 translate overflow-y-auto -translate-x-1/2 -translate-y-1/2 bg-[rgba(10,25,47,0.85)] left-1/2 flex flex-col items-center justify-start w-2/3 max-w-[900px] h-3/4 max-h-[70vh] z-10 rounded-[18px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-with-1 scrollbar-track-transparent`}
+                    className={`absolute top-1/2 pt-5 pb-10 translate overflow-y-auto -translate-x-1/2 -translate-y-1/2 bg-[rgba(10,25,47,0.85)] left-1/2 flex flex-col items-center justify-start w-[85%] sm:w-2/3 max-w-[900px] h-3/4 max-h-[70vh] z-10 rounded-[18px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-with-1 scrollbar-track-transparent`}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}

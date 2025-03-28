@@ -58,7 +58,7 @@ const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, 
             {showExperience &&
                 <motion.div
                     key="about"
-                    className={`absolute top-1/2 pb-5 translate overflow-y-auto -translate-x-1/2 -translate-y-1/2 pt-3 bg-[rgba(10,25,47,0.85)] sm:w-3/4 max-w-[1000px] max-h-[70vh] left-1/2 flex flex-col items-center justify-start z-10 rounded-[18px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-with-1 scrollbar-track-transparent`}
+                    className={`absolute top-1/2 pb-5 translate overflow-y-auto -translate-x-1/2 -translate-y-1/2 pt-3 bg-[rgba(10,25,47,0.85)] w-[85%] sm:w-3/4 max-w-[1000px] max-h-[70vh] left-1/2 flex flex-col items-center justify-start z-10 rounded-[18px] scrollbar-thin scrollbar-thumb-gray-500 scrollbar-thumb-rounded-full scrollbar-with-1 scrollbar-track-transparent`}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
