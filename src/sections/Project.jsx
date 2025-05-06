@@ -69,6 +69,41 @@ const Project = ({scrollRef, showProject, setShowProject, isScrolling, setIsScro
                         </button>
                     </div>
                     <div className="flex flex-col gap-10 w-full items-center">
+
+                        <div className="w-3/4 space-y-4">
+                            <div className="flex flex-row gap-5">
+                                <img
+                                    src="/assets/leetcode1.png"
+                                    alt="Description of image"
+                                    className="w-1/3 md:rounded-[30px] rounded-[22px] border-[2px] h-auto shadow-lg"
+                                />
+                                <img
+                                    src="/assets/leetcode2.png"
+                                    alt="Description of image"
+                                    className="w-1/3 md:rounded-[30px] rounded-[22px] border-[2px] h-auto shadow-lg"
+                                />
+                                <img
+                                    src="/assets/leetcode3.png"
+                                    alt="Description of image"
+                                    className="w-1/3 md:rounded-[30px] rounded-[22px] border-[2px] h-auto shadow-lg"
+                                />
+                            </div>
+                            <div className="flex md:flex-row flex-col md:gap-5 gap-2 w-full justify-between font-sans text-white">
+                                <div className="flex-1 font-bold text-lg">Leetcode Drag-and-Drop Study App</div>
+                                <div className="flex-1 text-gray-400 text-[14px] space-y-1">
+                                    <div>iOS app that helps students practice Leetcode problems on their phones using an intuitive drag-and-drop interface for assembling code snippets.</div>
+                                    <a
+                                        href="https://github.com/quocduyvu6262/LeetcodeDragNDrop"
+                                        target="_blank"
+                                        className="underline flex flex-row items-center gap-2"
+                                    >
+                                        View Project
+                                        <FiExternalLink />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                         <div className="w-3/4 space-y-4">
                             <img
                                 src="/assets/comments-analyzer2.png"
