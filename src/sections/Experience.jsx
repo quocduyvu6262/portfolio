@@ -75,24 +75,32 @@ const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, 
                             <div className="flex flex-row justify-start gap-10">
                                 <div>
                                     <p className="font-bold text-lg">The New York Times</p>
-                                    <p className="text-[12px] text-gray-300">Incoming June 2025 - August 2025</p>
+                                    <p className="text-[12px] text-gray-300">June 2025 - August 2025</p>
                                     <p className="text-[12px] text-gray-300">Software Engineer Intern</p>
                                 </div>
                             </div>
                             <div className="flex xl:flex-row flex-col gap-14">
                                 <div className="flex-1 flex flex-col justify-start gap-5">
                                     <ul className="list-disc ml-4 space-y-2 text-[16px]">
-                                        <li>Incoming Software Engineer Intern at the New York Times Games team, focusing on developing and enhancing the game application.</li>
+                                        <li>Spearheaded the implementation of full Dark Mode support for the native iOS Games App.</li>
+                                        <li>Resolved critical theme inconsistency bugs between UIKit/SwiftUI views and embedded web views.</li>
+                                        <li>Built an in-app setting to let users universally apply their preferred theme mode across the app.</li>
+                                        <li>Participated in New York Times Maker Week 2025 and built a Games/Friends Widget that displays real-time gameplay
+                                            data directly on the home screen.</li>
                                     </ul>
                                 </div>
                                 <div className="flex-1 -mt-10">
                                     <div className="grid grid-cols-1 md:grid-cols-2 place-items-end gap-5">
-                                        <div
-                                            className="w-full h-auto rounded-lg shadow-lg col-span-1"
+                                        <img
+                                            src="/assets/nyt1.PNG"
+                                            alt="Description of image"
+                                            className="w-full h-auto rounded-[18px] shadow-lg col-span-1 border-2"
                                         />
 
-                                        <div
-                                            className="w-full h-auto rounded-lg shadow-lg col-span-1"
+                                        <img
+                                            src="/assets/nyt2.PNG"
+                                            alt="Description of image"
+                                            className="w-full h-auto rounded-[18px] shadow-lg col-span-1 border-2"
                                         />
                                     </div>
                                 </div>
