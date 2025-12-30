@@ -74,6 +74,42 @@ const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, 
                         <div className="flex flex-col gap-2">
                             <div className="flex flex-row justify-start gap-10">
                                 <div>
+                                    <p className="font-bold text-lg">Robinhood</p>
+                                    <p className="text-[12px] text-gray-300">Incoming May 2025 - August 2025</p>
+                                    <p className="text-[12px] text-gray-300">Software Engineer Intern</p>
+                                </div>
+                            </div>
+                            <div className="flex xl:flex-row flex-col gap-14">
+                                <div className="flex-1 flex flex-col justify-start gap-5">
+                                    <ul className="list-disc ml-4 space-y-2 text-[16px]">
+                                        <li>Will build Swift-based, production-quality iOS and watchOS features.</li>
+                                        <li>Will collaborate with cross-functional teams to design, implement, and launch mobile experiences.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-2">
+                            <div className="flex flex-row justify-start gap-10">
+                                <div>
+                                    <p className="font-bold text-lg">Tesla</p>
+                                    <p className="text-[12px] text-gray-300">Incoming Jan 2025 - May 2025</p>
+                                    <p className="text-[12px] text-gray-300">Software Engineer Intern</p>
+                                </div>
+                            </div>
+                            <div className="flex xl:flex-row flex-col gap-14">
+                                <div className="flex-1 flex flex-col justify-start gap-5">
+                                    <ul className="list-disc ml-4 space-y-2 text-[16px]">
+                                        <li>Will join Automated Diagnostics team and work on Tesla App.</li>
+                                        <li>Will collaborate with cross-functional teams including product, UI/UX, QA/Validation, and backend engineers to deliver customer-facing features.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-2">
+                            <div className="flex flex-row justify-start gap-10">
+                                <div>
                                     <p className="font-bold text-lg">The New York Times</p>
                                     <p className="text-[12px] text-gray-300">June 2025 - August 2025</p>
                                     <p className="text-[12px] text-gray-300">Software Engineer Intern</p>
