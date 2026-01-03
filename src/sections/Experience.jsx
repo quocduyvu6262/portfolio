@@ -75,7 +75,7 @@ const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, 
                             <div className="flex flex-row justify-start gap-10">
                                 <div>
                                     <p className="font-bold text-lg">Robinhood</p>
-                                    <p className="text-[12px] text-gray-300">Incoming May 2025 - August 2025</p>
+                                    <p className="text-[12px] text-gray-300">Incoming May 2026 - August 2026</p>
                                     <p className="text-[12px] text-gray-300">Software Engineer Intern</p>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@ const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, 
                             <div className="flex flex-row justify-start gap-10">
                                 <div>
                                     <p className="font-bold text-lg">Tesla</p>
-                                    <p className="text-[12px] text-gray-300">Incoming Jan 2025 - May 2025</p>
+                                    <p className="text-[12px] text-gray-300">Incoming Jan 2026 - May 2026</p>
                                     <p className="text-[12px] text-gray-300">Software Engineer Intern</p>
                                 </div>
                             </div>
