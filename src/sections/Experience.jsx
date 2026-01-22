@@ -72,7 +72,13 @@ const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, 
                     <div className="flex flex-col gap-10 w-3/4 text-white font-sans">
 
                         <div className="flex flex-col gap-2">
-                            <div className="flex flex-row justify-start gap-10">
+                            <div className="flex flex-row justify-start items-center gap-4">
+                                <div className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <img
+                                        src="src/assets/robinhood-logo.png"
+                                        className="w-full h-full rounded-lg object-contain"
+                                    />
+                                </div>
                                 <div>
                                     <p className="font-bold text-lg">Robinhood</p>
                                     <p className="text-[12px] text-gray-300">Incoming May 2026 - August 2026</p>
@@ -90,25 +96,38 @@ const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, 
                         </div>
 
                         <div className="flex flex-col gap-2">
-                            <div className="flex flex-row justify-start gap-10">
+                            <div className="flex flex-row justify-start items-center gap-4">
+                                <div className="w-14 h-14 flex items-center justify-center flex-shrink-0">
+                                    <img
+                                        src="src/assets/tesla-logo.png"
+                                        className="w-full h-full object-contain rounded-lg"
+                                    />
+                                </div>
                                 <div>
                                     <p className="font-bold text-lg">Tesla</p>
-                                    <p className="text-[12px] text-gray-300">Incoming Jan 2026 - May 2026</p>
+                                    <p className="text-[12px] text-gray-300">Jan 2026 - May 2026</p>
                                     <p className="text-[12px] text-gray-300">Software Engineer Intern</p>
                                 </div>
                             </div>
                             <div className="flex xl:flex-row flex-col gap-14">
                                 <div className="flex-1 flex flex-col justify-start gap-5">
                                     <ul className="list-disc ml-4 space-y-2 text-[16px]">
-                                        <li>Will join Automated Diagnostics team and work on Tesla App.</li>
-                                        <li>Will collaborate with cross-functional teams including product, UI/UX, QA/Validation, and backend engineers to deliver customer-facing features.</li>
+                                        <li>Design, develop, and maintain front-end features for web and mobile applications for Automated Diagnostics team.</li>
+                                        <li>Collaborate with cross-functional teams to implement feature and resolve technical issues.</li>
+                                        <li>Participate in code reviews, debugging, and testing.</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-2">
-                            <div className="flex flex-row justify-start gap-10">
+                            <div className="flex flex-row justify-start items-center gap-4">
+                                <div className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <img
+                                        src="src/assets/nytimes-logo.png"
+                                        className="w-full h-full rounded-lg object-contain"
+                                    />
+                                </div>
                                 <div>
                                     <p className="font-bold text-lg">The New York Times</p>
                                     <p className="text-[12px] text-gray-300">June 2025 - August 2025</p>
@@ -145,7 +164,13 @@ const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, 
 
 
                         <div className="flex flex-col gap-2">
-                            <div className="flex flex-row justify-start gap-10">
+                            <div className="flex flex-row justify-start items-center gap-4">
+                                <div className="w-14 h-14 rounded-lg border-white-600 border-2 flex items-center justify-center flex-shrink-0">
+                                    <img
+                                        src="src/assets/sdsc-logo.png"
+                                        className="w-full h-full rounded-lg object-contain"
+                                    />
+                                </div>
                                 <div>
                                     <p className="font-bold text-lg">San Diego Supercomputer Center</p>
                                     <p className="text-[12px] text-gray-300">August 2023 - February 2024</p>
@@ -186,7 +211,13 @@ const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, 
                         </div>
 
                         <div className="flex flex-col gap-2">
-                            <div className="flex flex-row justify-start gap-10">
+                            <div className="flex flex-row justify-start items-center gap-4">
+                                <div className="w-14 h-14 rounded-lg border-white-600 border-2 flex items-center justify-center flex-shrink-0">
+                                    <img
+                                        src="src/assets/sdsc-logo.png"
+                                        className="w-full h-full rounded-lg object-contain"
+                                    />
+                                </div>
                                 <div>
                                     <p className="font-bold text-lg">San Diego Supercomputer Center</p>
                                     <p className="text-[12px] text-gray-300">June 2022 - September 2022</p>
