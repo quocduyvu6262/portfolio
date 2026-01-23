@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { IoMdClose } from "react-icons/io";
 import { motion, AnimatePresence } from "motion/react"
 import { FiExternalLink } from "react-icons/fi";
@@ -6,60 +6,62 @@ import { experiences } from '../constants';
 
 const ExperienceCard = ({ experience }) => {
     return (
-        <div className="flex flex-col gap-2">
-            <div className="flex flex-row justify-start items-center gap-4">
-                <div className={`w-14 h-14 rounded-lg ${experience.company == "San Diego Supercomputer Center" && 'border-2 border-white-600' } flex items-center justify-center flex-shrink-0`}>
-                    <img
-                        src={experience.logo}
-                        alt={`${experience.company} logo`}
-                        className="w-full h-full rounded-lg object-contain"
-                    />
-                </div>
-                <div>
-                    <p className="font-bold text-lg">{experience.company}</p>
-                    <p className="text-[12px] text-gray-300">{experience.period}</p>
-                    <p className="text-[12px] text-gray-300">{experience.role}</p>
-                </div>
+        <div className="flex flex-row gap-4 ml-[-20px]">
+            <div className={`w-14 h-14 rounded-lg ${experience.company == "San Diego Supercomputer Center" && 'border-2 border-white-600'} flex items-center justify-center flex-shrink-0`}>
+                <img
+                    src={experience.logo}
+                    alt={`${experience.company} logo`}
+                    className="w-full h-full rounded-lg object-contain"
+                />
             </div>
-            <div className="flex xl:flex-row flex-col gap-14">
-                <div className="flex-1 flex flex-col justify-start gap-5">
-                    <ul className="list-disc ml-4 space-y-2 text-[16px]">
-                        {experience.description.map((item, index) => (
-                            <li key={index}>{item}</li>
-                        ))}
-                    </ul>
-                    {experience.link && (
-                        <a
-                            href={experience.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm ml-4 underline flex flex-row items-center gap-2"
-                        >
-                            View Work
-                            <FiExternalLink />
-                        </a>
+            <div className="flex flex-col gap-2">
+                <div className="flex flex-row justify-start items-center gap-4">
+                    <div>
+                        <p className="font-bold text-lg">{experience.company}</p>
+                        <p className="text-[12px] text-gray-300">{experience.period}</p>
+                        <p className="text-[12px] text-gray-300">{experience.role}</p>
+                    </div>
+                </div>
+                <div className="flex xl:flex-row flex-col gap-14">
+                    <div className="flex-1 flex flex-col justify-start gap-5">
+                        <ul className="list-disc ml-4 space-y-2 text-[16px]">
+                            {experience.description.map((item, index) => (
+                                <li key={index}>{item}</li>
+                            ))}
+                        </ul>
+                        {experience.link && (
+                            <a
+                                href={experience.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-sm ml-4 underline flex flex-row items-center gap-2"
+                            >
+                                View Work
+                                <FiExternalLink />
+                            </a>
+                        )}
+                    </div>
+                    {experience.images && (
+                        <div className="flex-1 -mt-10">
+                            <div className="grid grid-cols-1 md:grid-cols-2 place-items-end gap-5">
+                                {experience.images.map((image, index) => (
+                                    <img
+                                        key={index}
+                                        src={image}
+                                        alt={`${experience.company} screenshot ${index + 1}`}
+                                        className={`w-full h-auto rounded-[18px] shadow-lg col-span-1 ${!image.includes("birdnest") && 'border-2'}`}
+                                    />
+                                ))}
+                            </div>
+                        </div>
                     )}
                 </div>
-                {experience.images && (
-                    <div className="flex-1 -mt-10">
-                        <div className="grid grid-cols-1 md:grid-cols-2 place-items-end gap-5">
-                            {experience.images.map((image, index) => (
-                                <img
-                                    key={index}
-                                    src={image}
-                                    alt={`${experience.company} screenshot ${index + 1}`}
-                                    className={`w-full h-auto rounded-[18px] shadow-lg col-span-1 ${!image.includes("birdnest") && 'border-2'}`}
-                                />
-                            ))}
-                        </div>
-                    </div>
-                )}
             </div>
         </div>
     );
 };
 
-const Experience = ({scrollRef, showExperience, setShowExperience, isScrolling, setIsScrolling, isScrollingRef}) => {
+const Experience = ({ scrollRef, showExperience, setShowExperience, isScrolling, setIsScrolling, isScrollingRef }) => {
 
     useEffect(() => {
         let frameId;
