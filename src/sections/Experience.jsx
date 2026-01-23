@@ -48,7 +48,7 @@ const ExperienceCard = ({ experience }) => {
                                     key={index}
                                     src={image}
                                     alt={`${experience.company} screenshot ${index + 1}`}
-                                    className={`w-full h-auto rounded-[18px] shadow-lg col-span-1 border-2 ${image.includes("/assets/birdnest") && 'border-0'}`}
+                                    className={`w-full h-auto rounded-[18px] shadow-lg col-span-1 ${!image.includes("birdnest") && 'border-2'}`}
                                 />
                             ))}
                         </div>
