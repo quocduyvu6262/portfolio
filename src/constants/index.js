@@ -261,34 +261,72 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 
 export const experiences = [
     {
-        title: "Software Engineer",
-        company_name: "San Diego Supercomputer Center",
-        icon: disc,
-        iconBg: "#383E56",
-        date: "August 2023 - Feb 2024",
-        points: [
-            "Key contributor in a cross-functional team for NeuroRes development, an iOS chat-based mobile app for 200+ neuroscience residents and attending physicians, achieving a positive response from stakeholders.",
-            "Utilized Swift UI to create a responsive interface featuring interactive calendars, neuroscience journal blogs, communication channels, and image collections, following MVVM architecture.",
-            "Built 10+ REST APIs for notifications, posts/comments, and chat services in Node.js and Go",
-            "Improved data handling in Node.js by implementing pagination and refactoring MySQL queries, resulting in a 30%\n" +
-            "reduction in API response time.",
-            "Implemented client-side caching with NSCache and AsyncImage, reducing network requests by 70% and improving\n" +
-            "image rendering time by 90% for neuroscience-related images.",
-            "Integrated with the campus security system Shibboleth/SAML to support web-based single sign-on."
+        id: 1,
+        company: 'Robinhood',
+        logo: '/assets/robinhood-logo.png',
+        period: 'Incoming May 2026 - August 2026',
+        role: 'Software Engineer Intern',
+        description: [
+            'Will build Swift-based, production-quality iOS and watchOS features.',
+            'Will collaborate with cross-functional teams to design, implement, and launch mobile experiences.',
         ],
+        images: null,
+        link: null,
     },
     {
-        title: "Software Engineer Intern",
-        company_name: "San Diego Supercomputer Center",
-        icon: disc,
-        iconBg: "#E6DEDD",
-        date: "June 2022 - September 2022",
-        points: [
-            "Collaborated with a team of 8 to develop a roommate-finder app in React Native for UCSD students.",
-            "Built 5+ reusable UI components for multiple buttons, sliders, and image holders.",
-            "Implemented an O(n log n) filtering algorithm in Node.js, querying the MySQL database on our Ubuntu server.",
-            "Utilized Firebase Cloud to build an in-app messaging system.",
+        id: 2,
+        company: 'Tesla',
+        logo: '/assets/tesla-logo.png',
+        period: 'Jan 2026 - May 2026',
+        role: 'Software Engineer Intern',
+        description: [
+            'Design, develop, and maintain front-end features for web and mobile applications for Automated Diagnostics team.',
+            'Collaborate with cross-functional teams to implement feature and resolve technical issues.',
+            'Participate in code reviews, debugging, and testing.',
         ],
+        images: null,
+        link: null,
+    },
+    {
+        id: 3,
+        company: 'The New York Times',
+        logo: '/assets/nytimes-logo.png',
+        period: 'June 2025 - August 2025',
+        role: 'Software Engineer Intern',
+        description: [
+            'Spearheaded the implementation of full Dark Mode support for the native iOS Games App.',
+            'Resolved critical theme inconsistency bugs between UIKit/SwiftUI views and embedded web views.',
+            'Built an in-app setting to let users universally apply their preferred theme mode across the app.',
+            'Participated in New York Times Maker Week 2025 and built a Games/Friends Widget that displays real-time gameplay data directly on the home screen.',
+        ],
+        images: ['/assets/nyt1.PNG', '/assets/nyt2.PNG'],
+        link: null,
+    },
+    {
+        id: 4,
+        company: 'San Diego Supercomputer Center',
+        logo: '/assets/sdsc-logo.png',
+        period: 'August 2023 - February 2024',
+        role: 'Software Engineer',
+        description: [
+            'Key contributor in development of NeuroRes, an iOS chat app for 200+ neuroscience professionals, receiving positive stakeholder feedback.',
+            'Utilized Swift UI to create a responsive interface featuring interactive calendars, neuroscience journal blogs, communication channels, and image collections, following MVVM architecture.',
+        ],
+        images: ['/assets/neurores2.png', '/assets/neurores1.png'],
+        link: 'https://apps.apple.com/gb/app/neurores/id1345523598',
+    },
+    {
+        id: 5,
+        company: 'San Diego Supercomputer Center',
+        logo: '/assets/sdsc-logo.png',
+        period: 'June 2022 - September 2022',
+        role: 'Software Engineer Intern',
+        description: [
+            'Collaborated with a team of 8 to develop a roommate-finder app in React Native for students at University of California, San Diego.',
+            'Utilized Firebase Cloud to build an in-app messaging system.',
+        ],
+        images: ['/assets/birdnest1.png', '/assets/birdnest2.png'],
+        link: null,
     },
 ];
 
