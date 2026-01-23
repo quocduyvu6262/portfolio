@@ -1,10 +1,10 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import { motion, AnimatePresence } from "motion/react"
 
-const About = ({scrollRef, showAbout, setShowAbout, isScrolling, setIsScrolling, isScrollingRef}) => {
+const About = ({ scrollRef, showAbout, setShowAbout, isScrolling, setIsScrolling, isScrollingRef }) => {
 
     useEffect(() => {
         let frameId;
@@ -72,11 +72,13 @@ const About = ({scrollRef, showAbout, setShowAbout, isScrolling, setIsScrolling,
                         <div className="flex overflow-auto sm:flex-row items-start justify-center w-full p-10">
 
                             <div className="md:flex flex-1 justify-center hidden">
-                                <img
-                                    src="/assets/avatar.jpg"
-                                    alt="Description of image"
-                                    className="min-w-[120px] w-1/2 h-auto rounded-full border-gray-400 border-[2px] shadow-lg col-span-1"
-                                />
+                                <div className="min-w-[120px] w-1/2 rounded-full border-gray-400 border-[2px] shadow-lg overflow-hidden">
+                                    <img
+                                        src="/assets/avatar.jpg"
+                                        alt="Description of image"
+                                        className="w-full h-full object-cover transition-transform duration-300"
+                                    />
+                                </div>
                             </div>
 
                             <div className="flex flex-1 flex-col sm:p-0 p-5 gap-5">
